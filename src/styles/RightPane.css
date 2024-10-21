@@ -1,0 +1,29 @@
+:root{
+    --left-prm: #181C14;
+    --right-prm: #ECDFCC;
+  }
+
+.right-pane {
+    background-color: var(--right-prm);
+    flex:1;
+    overflow-y: auto;
+}
+
+.page-container{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.preview{
+    background-color: white;
+    height: 90vh;
+    width: calc(90vh / 1.414);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 20px;
+}
+

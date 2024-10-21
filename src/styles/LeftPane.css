@@ -1,0 +1,10 @@
+:root{
+    --left-prm: #181C14;
+    --right-prm: #ECDFCC;
+  }
+.left-pane{
+    background-color: var(--left-prm);
+    color: var(--right-prm);
+    flex: 1;
+    height: 100%;
+}
