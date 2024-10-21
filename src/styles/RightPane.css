@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
+
 }
 
 .preview{
@@ -25,5 +26,7 @@
     width: calc(90vh / 1.414);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-bottom: 20px;
+    font-size: 2rem;
+    
 }
 
