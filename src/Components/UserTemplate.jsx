@@ -1,20 +1,24 @@
 const User = {
-    firstName:'Tushar',
-    lastName:'Tushar',
-    address: '123 Main Street, Anytown, USA, 12345',
-    email: 'randomuser123@example.com',
-    phone: '555-1234-5678',
-    links: {
-        git: 'https://github.com/tushar-droid',
-        portfolio: 'https://tushar-droid.github.io/MyCodeJourney/'
+    generalDetails:{        
+        firstName:'Tushar',
+        lastName:'Tushar',
+        address: '123 Main Street, Anytown, USA, 12345',
+        email: 'randomuser123@example.com',
+        phone: '555-1234-5678',
+        links: {
+            git: 'https://github.com/tushar-droid',
+            portfolio: 'https://tushar-droid.github.io/MyCodeJourney/'
+        },
+        skills: {
+            progLanguages: ['JavaScript', 'Python', 'Java', 'C++', 'Ruby', 'Swift', 'TypeScript', 'Kotlin'],
+            os: ['Windows', 'macOS', 'Linux', 'Android', 'iOS'],
+            db: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite', 'Oracle', 'Microsoft SQL Server'],
+            webtools: ['VSCode', 'Git', 'Webpack', 'npm', 'Chrome DevTools', 'JIRA', 'Figma'],
+            othertools: ['Photoshop', 'Excel', 'Slack', 'Trello', 'Zoom', 'Notion', 'Eclipse', 'Sublime Text'],
+        },
+
     },
-    skills: {
-        progLanguages: ['JavaScript', 'Python', 'Java', 'C++', 'Ruby', 'Swift', 'TypeScript', 'Kotlin'],
-        os: ['Windows', 'macOS', 'Linux', 'Android', 'iOS'],
-        db: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQLite', 'Oracle', 'Microsoft SQL Server'],
-        webtools: ['VSCode', 'Git', 'Webpack', 'npm', 'Chrome DevTools', 'JIRA', 'Figma'],
-        othertools: ['Photoshop', 'Excel', 'Slack', 'Trello', 'Zoom', 'Notion', 'Eclipse', 'Sublime Text'],
-    },
+    
 
     work: [
         {
@@ -59,6 +63,7 @@ const User = {
             details: 'Mastered the intricacies of web development during my bachelor’s program at Thompson Rivers University, particularly excelling in Software Design and Architecture. \nDemonstrated versatility in coursework, spanning Cloud Computing in AWS and Computer Network Security, contributing to a well-rounded skill set. \nExplored diverse areas of computing science, gaining proficiency in Data Structures, Machine Learning, and Quantum Computing.'
         }
     ]
+    
 }
 
 
