@@ -7,6 +7,7 @@ import {useState} from 'react'
 
 function App() {
   const [generalDetails, setGeneralDetails] = useState(User.generalDetails)
+  const [skills, setSkills] = useState(User.generalDetails.skills)
   const handleGeneralDetailChanges = (e) =>{
     const targetField = e.target.id
     console.log(targetField)
@@ -50,13 +51,29 @@ function App() {
       }
 
     }
-
-
+    
   }
+  const handleSkills = (e) =>{
+    const targetField = e.target.id
+    
+    switch (targetField){
+      case 'progLanguages-field':{
+        const arr = e.target.value.split(', ')
+        console.log(arr)
+        const temp = {...skills, progLanguages: arr}
+        setSkills(temp)
+        break; 
+      }
+    }
+    
+  }
+
+
+
   return (
     <ChakraProvider>
       <>
-        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} />
+        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} skills= {skills} handleSkills = {handleSkills}/>
         <RightPane generalDetails = {generalDetails} />
       </>
     </ChakraProvider>

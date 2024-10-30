@@ -1,4 +1,4 @@
-import { Input } from "@chakra-ui/react"
+import {  Input } from "@chakra-ui/react"
 import PropTypes from "prop-types"
 
 export default function PersonalDetails ({generalDetails, handleGeneralDetails}){
@@ -13,9 +13,11 @@ export default function PersonalDetails ({generalDetails, handleGeneralDetails})
             </div>
             <Input placeholder="Email" type="email" size='lg' value={generalDetails.email} onChange={handleGeneralDetails} id="email-field"  />
             <Input placeholder="Phone Number" type="tel" size='lg' value={generalDetails.phone} onChange={handleGeneralDetails} id="phone-field"/>
+            
             <Input placeholder="Address" type="text" size='lg' value={generalDetails.address} onChange={handleGeneralDetails} id="address-field"/>
-            <Input placeholder="Github Link" type="text" size='lg' value={generalDetails.links.git} onChange={handleGeneralDetails} id="git-field" />
+            <Input placeholder="Github Link" type="text" size='lg' value={generalDetails.links.git} onChange={handleGeneralDetails} id="git-field" />                    
             <Input placeholder="Portfolio Link" type="text" size='lg' value={generalDetails.links.portfolio} onChange={handleGeneralDetails} id="portfolio-field" />
+
         </div> 
     )
 }
