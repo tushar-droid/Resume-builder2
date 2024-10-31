@@ -6,7 +6,7 @@ export default function Skills ({generalDetails, handleGeneralDetails}) {
 
     
     return(
-        <>
+        <div className="skills-container">
             <h1>SKILLS</h1>
             <label> Programming Languages
                 <Input placeholder="Java, Python, C++" value={generalDetails.skills.progLanguages.join(', ')} type="text" size='lg' id="progLanguages-field" onChange={handleGeneralDetails}/>
@@ -23,7 +23,7 @@ export default function Skills ({generalDetails, handleGeneralDetails}) {
             <label> Others
                 <Input placeholder="Photoshop, Slack" value={generalDetails.skills.othertools.join(', ')} type="text" size='lg' id="othertools-field" onChange={handleGeneralDetails}/>
             </label>
-        </>
+        </div>
     )
 }
 
