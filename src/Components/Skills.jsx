@@ -14,6 +14,15 @@ export default function Skills ({generalDetails, handleGeneralDetails}) {
             <label> Operating Systems
                 <Input placeholder="Windows, MacOS, Mint" value={generalDetails.skills.os.join(', ')} type="text" size='lg' id="os-field" onChange={handleGeneralDetails}/>
             </label>
+            <label> Databases
+                <Input placeholder="MySQL, MongoDB" value={generalDetails.skills.db.join(', ')} type="text" size='lg' id="db-field" onChange={handleGeneralDetails}/>
+            </label>
+            <label> Tools
+                <Input placeholder="VSCode, Git, Webpack" value={generalDetails.skills.webtools.join(', ')} type="text" size='lg' id="webtools-field" onChange={handleGeneralDetails}/>
+            </label>
+            <label> Others
+                <Input placeholder="Photoshop, Slack" value={generalDetails.skills.othertools.join(', ')} type="text" size='lg' id="othertools-field" onChange={handleGeneralDetails}/>
+            </label>
         </>
     )
 }

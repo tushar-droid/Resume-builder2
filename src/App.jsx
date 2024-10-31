@@ -64,6 +64,30 @@ function App() {
         setGeneralDetails(temp)
         break
       }
+      case 'db-field': {
+        const arr = e.target.value.split(', ')
+        const tempdb= {...generalDetails.skills, db: arr}
+        const temp = {...generalDetails, skills: tempdb}
+        setGeneralDetails(temp)
+        break
+      }
+      case 'webtools-field': {
+        const arr = e.target.value.split(', ')
+        const tempWebtools= {...generalDetails.skills, webtools: arr}
+        const temp = {...generalDetails, skills: tempWebtools}
+        setGeneralDetails(temp)
+        break
+      }
+      case 'othertools-field': {
+        const arr = e.target.value.split(', ')
+        const tempTools= {...generalDetails.skills, othertools: arr}
+        const temp = {...generalDetails, skills: tempTools}
+        setGeneralDetails(temp)
+        break
+      }
+
+
+
 
     }
     
