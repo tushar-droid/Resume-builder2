@@ -96,17 +96,41 @@ function App() {
       case 'institution-field':{
         let temp = [...education]
         temp[indexToChange].institutionName = e.target.value        
-        setEducation(temp)
-        
-        
-    }
-    
+        setEducation(temp)  
+        break            
+        }
+    case 'location-field':{
+      let temp = [...education]
+      temp[indexToChange].location = e.target.value        
+      setEducation(temp)              
+      break
+        } 
+    case 'course-field':{
+      let temp = [...education]
+      temp[indexToChange].course = e.target.value        
+      setEducation(temp)              
+      break
+        } 
+    case 'graduationDate-field':{
+      let temp = [...education]
+      temp[indexToChange].graduationDate = e.target.value        
+      setEducation(temp)              
+      break
+        }
+    case 'gpa-field':{
+      let temp = [...education]
+      temp[indexToChange].gpa = e.target.value        
+      setEducation(temp)              
+      break
+        }            
+    case 'details-field':{
+          let temp = [...education]
+          temp[indexToChange].details = e.target.value        
+          setEducation(temp)              
+          break
+            }                         
   }
-
 }
-
-
-
 
 
   return (

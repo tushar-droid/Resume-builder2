@@ -1,4 +1,4 @@
-import { Input } from "@chakra-ui/react"
+import { Input, Textarea } from "@chakra-ui/react"
 import PropTypes from 'prop-types'
 
 export default function EducationDetails ({education, handleEducation}) {
@@ -14,6 +14,16 @@ export default function EducationDetails ({education, handleEducation}) {
                             <li key={elem['id']}>   
                                 <Input value={elem['institutionName']} onChange={handleEducation} id={'institution-field'} data-key={elem['id']}>
                                 </Input>
+                                <Input value={elem['location']} onChange={handleEducation} id={'location-field'} data-key={elem['id']}>
+                                </Input>
+                                <Input value={elem['course']} onChange={handleEducation} id={'course-field'} data-key={elem['id']}>
+                                </Input>
+                                <Input value={elem['graduationDate']} onChange={handleEducation} id={'graduationDate-field'} data-key={elem['id']}>
+                                </Input>
+                                <Input value={elem['gpa']} onChange={handleEducation} id={'gpa-field'} data-key={elem['id']}>
+                                </Input>
+                                <Textarea value={elem['details']} onChange={handleEducation} id={'details-field'} data-key={elem['id']}>
+                                </Textarea>                                                                
                             </li>
                         )
                     })
