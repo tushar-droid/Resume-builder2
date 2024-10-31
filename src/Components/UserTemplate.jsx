@@ -55,7 +55,16 @@ const User = {
     education: [
         {
             id: Date.now(),
-            instituteName: 'Thompson Rivers University',
+            institutionName: 'Thompson Rivers University',
+            location:'Kamloops, BC, Canada',
+            course: 'Bachelor of Computing Science',
+            graduationDate: 'January 2023',
+            gpa: '3.37',
+            details: 'Mastered the intricacies of web development during my bachelor’s program at Thompson Rivers University, particularly excelling in Software Design and Architecture. \nDemonstrated versatility in coursework, spanning Cloud Computing in AWS and Computer Network Security, contributing to a well-rounded skill set. \nExplored diverse areas of computing science, gaining proficiency in Data Structures, Machine Learning, and Quantum Computing.'
+        },
+        {
+            id: Date.now()+1,
+            institutionName: 'University of British Columbia',
             location:'Kamloops, BC, Canada',
             course: 'Bachelor of Computing Science',
             graduationDate: 'January 2023',

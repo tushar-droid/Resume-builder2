@@ -7,10 +7,9 @@ import {useState} from 'react'
 
 function App() {
   const [generalDetails, setGeneralDetails] = useState(User.generalDetails)
-  // const [skills, setSkills] = useState(User.generalDetails)
+  const [education, setEducation] = useState(User.education)
   const handleGeneralDetailChanges = (e) =>{
     const targetField = e.target.id
-    console.log(targetField)
     switch(targetField){
       case 'firstName-field':{
         const temp = {...generalDetails, firstName: e.target.value}
@@ -85,13 +84,27 @@ function App() {
         setGeneralDetails(temp)
         break
       }
+    }    
+  }
+  const handleEducationChanges = (e) =>{
+    const targetField = e.target.id
+    const key = e.target.getAttribute('data-key')
+    const indexToChange = education.findIndex((elem) => elem['id'] == key)
 
-
-
-
+    
+    switch(targetField) {
+      case 'institution-field':{
+        let temp = [...education]
+        temp[indexToChange].institutionName = e.target.value        
+        setEducation(temp)
+        
+        
     }
     
   }
+
+}
+
 
 
 
@@ -99,11 +112,12 @@ function App() {
   return (
     <ChakraProvider>
       <>
-        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges}/>
-        <RightPane generalDetails = {generalDetails} />
+        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} education ={education} handleEducation = {handleEducationChanges}/>
+        <RightPane generalDetails = {generalDetails} education = {education} />
       </>
     </ChakraProvider>
   )
 }
 
-export default App
+export default App;
+

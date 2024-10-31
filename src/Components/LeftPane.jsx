@@ -9,7 +9,7 @@ import Skills from './Skills'
 import EducationDetails from './EducationDetails'
 import WorkDetails from './WorkDetails'
 import ProjectDetails from './ProjectDetails'
-export default function LeftPane ({generalDetails, handleGeneralDetails}) {
+export default function LeftPane ({generalDetails, handleGeneralDetails, education, handleEducation } ) {
     const [pageId, setPageId] = useState(0)
 
     const pageIdObj = {
@@ -26,7 +26,7 @@ export default function LeftPane ({generalDetails, handleGeneralDetails}) {
             },
         2: 
         {
-            'page': <EducationDetails />,
+            'page': <EducationDetails education = {education} handleEducation = {handleEducation}/>,
             'text': 'Education Details',
             },
         3: 
@@ -71,6 +71,6 @@ export default function LeftPane ({generalDetails, handleGeneralDetails}) {
 LeftPane.propTypes = {
     generalDetails: PropTypes.object,
     handleGeneralDetails:PropTypes.func,
-    skills: PropTypes.object,
-    handleSkills: PropTypes.func,
+    education: PropTypes.array,
+    handleEducation: PropTypes.func,
 }
