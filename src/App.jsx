@@ -7,7 +7,7 @@ import {useState} from 'react'
 
 function App() {
   const [generalDetails, setGeneralDetails] = useState(User.generalDetails)
-  const [skills, setSkills] = useState(User.generalDetails.skills)
+  // const [skills, setSkills] = useState(User.generalDetails)
   const handleGeneralDetailChanges = (e) =>{
     const targetField = e.target.id
     console.log(targetField)
@@ -49,31 +49,33 @@ function App() {
         setGeneralDetails(temp)
         break;        
       }
+      case 'progLanguages-field': {
+        const arr = e.target.value.split(', ')
+        const tempLang = {...generalDetails.skills, progLanguages: arr}
+
+        const temp = {...generalDetails, skills: tempLang}
+        setGeneralDetails(temp)
+        break;
+      }
+      case 'os-field': {
+        const arr = e.target.value.split(', ')
+        const tempOs= {...generalDetails.skills, os: arr}
+        const temp = {...generalDetails, skills: tempOs}
+        setGeneralDetails(temp)
+        break
+      }
 
     }
     
   }
-  const handleSkills = (e) =>{
-    const targetField = e.target.id
-    
-    switch (targetField){
-      case 'progLanguages-field':{
-        const arr = e.target.value.split(', ')
-        console.log(arr)
-        const temp = {...skills, progLanguages: arr}
-        setSkills(temp)
-        break; 
-      }
-    }
-    
-  }
+
 
 
 
   return (
     <ChakraProvider>
       <>
-        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} skills= {skills} handleSkills = {handleSkills}/>
+        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges}/>
         <RightPane generalDetails = {generalDetails} />
       </>
     </ChakraProvider>
