@@ -180,7 +180,7 @@ function App() {
         setWork(temp)  
         break            
         }
-      case 'details-field':{
+      case 'duties-field':{
           let temp = [...work]
           temp[indexToChange].duties = e.target.value        
           setWork(temp)              

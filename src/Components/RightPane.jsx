@@ -17,14 +17,13 @@ export default function RightPane ({generalDetails, education, work}) {
                            return( 
                             <li key={elem['id']}>{
                                 <>
-                                    <h1>{elem['position']}</h1>
+                                    {/* <h1>{elem['position']}</h1>
                                     <h2> {elem['company']}</h2>    
                                     <h2> {elem['startDate']}</h2>                            
-                                    <h2> {elem['endDate']}</h2>  
-                                    {/* <h2> {elem['details']}</h2> */}
-                                    {/* <ul className='temp'>
-                                        {elem['details'].split('\n').map((d, index) => <li key={index}>{d}</li>)}
-                                    </ul> */}
+                                    <h2> {elem['endDate']}</h2>   */}
+                                    <ul className='temp'>
+                                        {elem['duties'].split('\n').map((d, index) => <li key={index}>{d}</li>)}
+                                    </ul>
 
                                 </>
                             }
