@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import '../styles/RightPane.css'
 
+// eslint-disable-next-line no-unused-vars
 export default function RightPane ({generalDetails, education}) {
     
     

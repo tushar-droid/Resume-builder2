@@ -29,7 +29,7 @@ export default function EducationDetails ({education, handleEducation}) {
                     })
                 }
             </ul>
-            <Button> Add new</Button>
+            <Button id= 'Add-btn' onClick={handleEducation}> Add new</Button>
         </div>
     )
 }

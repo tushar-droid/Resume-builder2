@@ -128,13 +128,28 @@ function App() {
           break
         }
     case 'delete-btn':{
-      console.log(`Delete Button pressed on ID: ${key}`)
       let temp = [...education]
       temp.splice(indexToChange, 1)
       setEducation(temp)
       break
+    }      
+    case 'Add-btn':{
+      const temp = [...education]
+      
+      const newEducation = {}
+      
+      newEducation['id'] = Date.now()
+      newEducation['institutionName'] = 'Institute Name'
+      newEducation['location'] = 'Location'
+      newEducation['course'] = 'Course taken'
+      newEducation['graduationDate'] = 'Date of Graduation'
+      newEducation['gpa'] = 'GPA achieved'
+      newEducation['details'] = 'Details'
+      temp.push(newEducation)
+      console.log(temp)
+      setEducation(temp)
 
-    }                         
+    }                   
   }
 }
 
