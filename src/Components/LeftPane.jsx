@@ -42,13 +42,38 @@ export default function LeftPane ({generalDetails, handleGeneralDetails, educati
             }        
     }
 
-    const nextButton = pageIdObj[pageId + 1]['text']
-
-    const handleNextPage  = () => {
-        setPageId(pageId + 1 ) 
+    //const nextButton = pageIdObj[pageId + 1]['text']    
+    let nextButton = ''
+    let prevButton =''
+    if(pageId != 4){
+        nextButton = pageIdObj[pageId + 1]['text']
     }
-
-
+    else{
+        nextButton = pageIdObj[0]['text']        
+    }
+    if(pageId == 0){
+        prevButton = pageIdObj[4]['text']
+    }
+    else{
+        prevButton = pageIdObj[pageId - 1]['text']
+        
+    }
+    const handleNextPage  = () => {
+        if( pageIdObj[pageId].text != 'Projects' ){
+            setPageId(pageId + 1 ) 
+        }
+        else{            
+            setPageId(0)
+        }
+    }
+    const handlePreviousPage  = () => {
+        if( pageIdObj[pageId].text == 'Personal Details' ){
+            setPageId(4) 
+        }
+        else{            
+            setPageId(pageId - 1 ) 
+        }
+    }
 
     return (
         <div className="left-pane">
@@ -56,8 +81,8 @@ export default function LeftPane ({generalDetails, handleGeneralDetails, educati
                 {pageIdObj[pageId]['page']}
                 {/* <PersonalDetails generalDetails= {generalDetails} handleGeneralDetails={handleGeneralDetails} /> */}
                 <div className='nav-buttons-container'>
-                <Button leftIcon={<ArrowBackIcon />} color='#181C14' background='#ECDFCC' variant='solid'/* isDisabled= {true} */ onClick={() => setPageId(pageId -1)}>
-                    Work
+                <Button leftIcon={<ArrowBackIcon />} color='#181C14' background='#ECDFCC' variant='solid'/* isDisabled= {true} */ onClick={handlePreviousPage}>
+                    {prevButton}
                 </Button>
                 <Button rightIcon={<ArrowForwardIcon />} color='#181C14' background='#ECDFCC' variant='solid' onClick={handleNextPage}>
                     {nextButton}
