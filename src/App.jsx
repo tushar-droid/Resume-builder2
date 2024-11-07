@@ -8,6 +8,7 @@ import {useState} from 'react'
 function App() {
   const [generalDetails, setGeneralDetails] = useState(User.generalDetails)
   const [education, setEducation] = useState(User.education)
+  const [work, setWork] = useState(User.work)
   const handleGeneralDetailChanges = (e) =>{
     const targetField = e.target.id
     switch(targetField){
@@ -136,8 +137,7 @@ function App() {
     case 'Add-btn':{
       const temp = [...education]
       
-      const newEducation = {}
-      
+      const newEducation = {}      
       newEducation['id'] = Date.now()
       newEducation['institutionName'] = 'Institute Name'
       newEducation['location'] = 'Location'
@@ -148,17 +148,53 @@ function App() {
       temp.push(newEducation)
       console.log(temp)
       setEducation(temp)
-
     }                   
   }
-}
+  }
+  const handleWorkChanges = (e) =>{
+    const targetField = e.target.id
+    const key = e.target.getAttribute('data-key')
+    const indexToChange = work.findIndex((elem) => elem['id'] == key)
+    switch(targetField) {
+      case 'position-field':{
+        let temp = [...work]
+        temp[indexToChange].position = e.target.value        
+        setWork(temp)  
+        break            
+        }
+      case 'company-field':{
+        let temp = [...work]
+        temp[indexToChange].company = e.target.value        
+        setWork(temp)  
+        break            
+        }             
+      case 'startDate-field':{
+        let temp = [...work]
+        temp[indexToChange].startDate = e.target.value        
+        setWork(temp)  
+        break            
+        }
+      case 'endDate-field':{
+        let temp = [...work]
+        temp[indexToChange].endDate = e.target.value        
+        setWork(temp)  
+        break            
+        }
+      case 'details-field':{
+          let temp = [...work]
+          temp[indexToChange].duties = e.target.value        
+          setWork(temp)              
+          break
+        }
+      }
+  }
 
 
   return (
     <ChakraProvider>
       <>
-        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} education ={education} handleEducation = {handleEducationChanges}/>
-        <RightPane generalDetails = {generalDetails} education = {education} />
+        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} education ={education} handleEducation = {handleEducationChanges} work={work} handleWork = {handleWorkChanges}/>
+        <RightPane generalDetails = {generalDetails} education = {education} work={work} />
       </>
     </ChakraProvider>
   )
