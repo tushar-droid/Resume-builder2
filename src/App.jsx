@@ -90,8 +90,6 @@ function App() {
     const targetField = e.target.id
     const key = e.target.getAttribute('data-key')
     const indexToChange = education.findIndex((elem) => elem['id'] == key)
-
-    
     switch(targetField) {
       case 'institution-field':{
         let temp = [...education]
@@ -128,7 +126,15 @@ function App() {
           temp[indexToChange].details = e.target.value        
           setEducation(temp)              
           break
-            }                         
+        }
+    case 'delete-btn':{
+      console.log(`Delete Button pressed on ID: ${key}`)
+      let temp = [...education]
+      temp.splice(indexToChange, 1)
+      setEducation(temp)
+      break
+
+    }                         
   }
 }
 
