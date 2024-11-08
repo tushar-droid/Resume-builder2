@@ -186,6 +186,25 @@ function App() {
           setWork(temp)              
           break
         }
+      case 'delete-btn':{
+      let temp = [...work]
+      temp.splice(indexToChange, 1)
+      setWork(temp)
+      break
+      }      
+      case 'Add-btn':{
+        const temp = [...work]        
+        const newWork= {}      
+        newWork['id'] = Date.now()
+        newWork['position'] = 'Position'
+        newWork['company'] = 'Company'
+        newWork['startDate'] = 'Start Date'
+        newWork['endDate'] = 'End Date'
+        newWork['duties'] = 'Duties'        
+        temp.push(newWork)        
+        setWork(temp)
+
+      }          
       }
   }
 
