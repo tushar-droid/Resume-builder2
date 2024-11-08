@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import '../styles/RightPane.css'
 
 // eslint-disable-next-line no-unused-vars
-export default function RightPane ({generalDetails, education, work}) {
+export default function RightPane ({generalDetails, education, work, project}) {
     
     
 
@@ -13,16 +13,20 @@ export default function RightPane ({generalDetails, education, work}) {
                     {/* {JSON.stringify(education)} */}
                     <ul>
                     {
-                        work.map ((elem) =>{                            
+                        project.map ((elem) =>{                            
                            return( 
                             <li key={elem['id']}>{
                                 <>
-                                    {/* <h1>{elem['position']}</h1>
-                                    <h2> {elem['company']}</h2>    
+                                    {/* <h1>{elem['projectName']}</h1>
+                                    <h2> {elem['technologies']}</h2>    */}
+
+                                    {/*                                      
                                     <h2> {elem['startDate']}</h2>                            
                                     <h2> {elem['endDate']}</h2>   */}
+
+
                                     <ul className='temp'>
-                                        {elem['duties'].split('\n').map((d, index) => <li key={index}>{d}</li>)}
+                                        {elem['projectDetails'].split('\n').map((d, index) => <li key={index}>{d}</li>)}
                                     </ul>
 
                                 </>
@@ -43,7 +47,9 @@ export default function RightPane ({generalDetails, education, work}) {
 
 RightPane.propTypes = {
     generalDetails: PropTypes.object,
-    education: PropTypes.array
+    education: PropTypes.array,
+    work: PropTypes.array,
+    project: PropTypes.array,
 }
 
 

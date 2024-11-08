@@ -28,7 +28,7 @@
 }
 
 
-.personal-details-container, .skills-container, .education-contianer, .work-container{
+.personal-details-container, .skills-container, .education-contianer, .work-container, .project-container{
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -49,7 +49,7 @@
   flex: 1;
 }
 
-.education-contianer > ul > li, .education-contianer > ul,.work-container > ul > li, .work-container > ul   {
+.education-contianer > ul > li, .education-contianer > ul,.work-container > ul > li, .work-container > ul, .project-container > ul > li, .project-container > ul   {
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -9,6 +9,7 @@ function App() {
   const [generalDetails, setGeneralDetails] = useState(User.generalDetails)
   const [education, setEducation] = useState(User.education)
   const [work, setWork] = useState(User.work)
+  const [project, setProject] = useState(User.projects)
   const handleGeneralDetailChanges = (e) =>{
     const targetField = e.target.id
     switch(targetField){
@@ -146,7 +147,6 @@ function App() {
       newEducation['gpa'] = 'GPA achieved'
       newEducation['details'] = 'Details'
       temp.push(newEducation)
-      console.log(temp)
       setEducation(temp)
     }                   
   }
@@ -189,12 +189,61 @@ function App() {
       }
   }
 
+  const handleProjectChanges = (e) =>{
+    const targetField = e.target.id
+    const key = e.target.getAttribute('data-key')
+    const indexToChange = project.findIndex((elem) => elem['id'] == key)
+    
+
+    switch(targetField) {
+      case 'projectName-field':{
+        let temp = [...project]
+
+        temp[indexToChange].projectName = e.target.value        
+        setProject(temp)  
+        break            
+        }
+      case 'technologies-field':{
+        let temp = [...project]
+        temp[indexToChange].technologies = e.target.value        
+        setProject(temp)  
+        break            
+          }        
+      case 'projectDetails-field':{
+        let temp = [...project]
+        temp[indexToChange].projectDetails = e.target.value        
+        setProject(temp)  
+        break            
+          }        
+      case 'delete-btn':{
+      let temp = [...project]
+      temp.splice(indexToChange, 1)
+      setProject(temp)
+      break
+      }      
+      case 'Add-btn':{
+        const temp = [...project]        
+        const newProject = {}      
+        newProject['id'] = Date.now()
+        newProject['projectName'] = 'Project Title'
+        newProject['technologies'] = ['Technologies used for the project']
+        newProject['projectDetails'] = 'Details about the project'
+        temp.push(newProject)        
+        setProject(temp)
+
+      }                  
+
+      }
+  }
+
+
+
 
   return (
     <ChakraProvider>
       <>
-        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} education ={education} handleEducation = {handleEducationChanges} work={work} handleWork = {handleWorkChanges}/>
-        <RightPane generalDetails = {generalDetails} education = {education} work={work} />
+        <LeftPane generalDetails = {generalDetails} handleGeneralDetails = {handleGeneralDetailChanges} education ={education} handleEducation = {handleEducationChanges} work={work} handleWork = {handleWorkChanges} project={project} handleProject = {handleProjectChanges} />
+        <RightPane generalDetails = {generalDetails} education = {education} work={work} project={project} />
       </>
     </ChakraProvider>
   )

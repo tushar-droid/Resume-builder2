@@ -32,3 +32,8 @@ export default function WorkDetails ({work, handleWork}) {
         </div>
     )
 }
+
+WorkDetails.propTypes = {    
+    work: PropTypes.array,
+    handleWork: PropTypes.func,
+}

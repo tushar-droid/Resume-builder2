@@ -48,6 +48,13 @@ const User = {
             technologies: ['HTML', 'CSS', 'JS'],
             projectDetails:"Reviewed contribution guidelines for a clear understanding of requirements. \nEnhanced code readability by aligning block delimiters with the project's style guide, creating a more cohesive code structure, demonstrating attention to detail and commitment to code quality \n Closed the issue seamlessly through adherence to the proper process, culminating in a successfully merged pull request."
 
+        },
+        {
+            id:Date.now() + 1  ,
+            projectName: 'The Odin Project',
+            technologies: ['HTML', 'CSS', 'JS'],
+            projectDetails:"Reviewed contribution guidelines for a clear understanding of requirements. \nEnhanced code readability by aligning block delimiters with the project's style guide, creating a more cohesive code structure, demonstrating attention to detail and commitment to code quality \n Closed the issue seamlessly through adherence to the proper process, culminating in a successfully merged pull request."
+
         }
 
     ],
